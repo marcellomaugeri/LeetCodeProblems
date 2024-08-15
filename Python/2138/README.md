@@ -1,4 +1,4 @@
-# [2138 - Divide a String Into Groups of Size k]()
+# [2138 - Divide a String Into Groups of Size k](https://leetcode.com/problems/divide-a-string-into-groups-of-size-k/)
 
 ### Problem Statement
 A string `s` can be partitioned into groups of size `k` using the following procedure:
