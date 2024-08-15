@@ -1,0 +1,51 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate problem list
+        run: |
+          # List all directories (programming languages)
+          languages=$(ls -d */)
+
+          # Initialize the problem list
+          problem_list=""
+
+          # Iterate over each language directory
+          for language in $languages; do
+            # Add language header to the problem list
+            problem_list+="## $language\n"
+
+            # List problem directories within the language directory
+            problems=$(ls -d $language*/)
+
+            # Iterate over each problem directory
+            for problem in $problems; do
+              # Extract problem number from directory name
+              problem_number=${problem%/} 
+              problem_number=${problem_number##*/}
+
+              # Add problem entry to the problem list
+              problem_list+="* [$problem_number](/$language/$problem_number)\n"
+            done
+
+            # Add a newline after each language section
+            problem_list+="\n"
+          done
+
+          # Write the problem list to a file
+          echo "$problem_list" > problem_list.txt
+
+      - name: Append problem list to README
+        run: |
+          # Append the problem list to README.md starting from line 17
+          sed -i "17r problem_list.txt" README.md
