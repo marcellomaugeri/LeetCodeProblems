@@ -16,7 +16,6 @@ Output: [1,2,2,3,5,6]
 Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
 The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
 ```
-Then the 1st smallest distance pair is (1,1), and its distance is 0.
 #### Example 2:
 ```
 Input: nums1 = [1], m = 1, nums2 = [], n = 0

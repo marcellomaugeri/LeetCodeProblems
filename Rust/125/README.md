@@ -12,7 +12,6 @@ Input: s = "A man, a plan, a canal: Panama"
 Output: true
 Explanation: "amanaplanacanalpanama" is a palindrome.
 ```
-Then the 1st smallest distance pair is (1,1), and its distance is 0.
 #### Example 2:
 ```
 Input: s = "race a car"
