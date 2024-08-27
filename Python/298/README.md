@@ -1,4 +1,4 @@
-# [298 - Game of Life](https://leetcode.com/problems/find-k-th-smallest-pair-distance/)
+# [298 - Game of Life](https://leetcode.com/problems/game-of-life)
 ### Difficulty: Medium
 
 ### Problem Statement
